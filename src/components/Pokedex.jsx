@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Pokemon } from './Pokemon'
+
 export const Pokedex = () => {
 
     const[pokemones, setPokemones] = useState([])
