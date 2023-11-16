@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Pokemon } from './Pokemon'
 import db from '../firebase/firebaseConfig'
 import { doc, onSnapshot, setDoc, collection, addDoc } from 'firebase/firestore'
-
+import Button from '@mui/material/Button'
 
 
 export const Pokedex = () => {
@@ -62,20 +62,23 @@ export const Pokedex = () => {
     }, [])
     
   return ( 
-    <div>
-        
-        {pokemones.map((pokemon) =>
-        {
-            return <Pokemon key={pokemon.id} pokemon={pokemon}/>
-        })}
-
+    <div >
         <div>
             {
-                page != 1 && <button onClick={() => setPage(page - 1)}>Anterior</button> 
+                page != 1 && <Button variant="contained" onClick={() => setPage(page - 1)} >Anterior</Button> 
             }
             
-            <button onClick={() => setPage(page + 1)}>Siguiente</button>
+            <Button variant="contained" onClick={() => setPage(page + 1) }>Siguiente</Button>
         </div>
+
+
+        <div className="parent">
+            {pokemones.map((pokemon) =>
+            {
+                return <Pokemon key={pokemon.id} pokemon={pokemon}/>
+            })}
+        </div>
+
   </div>
   )
 }
