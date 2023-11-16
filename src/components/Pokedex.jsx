@@ -13,8 +13,8 @@ export const Pokedex = () => {
     function readDocument(){
         onSnapshot(DBReferece, docSnapshot => {
             if(docSnapshot.exists()){
-                const docData = docSnapshot.data()
-                console.log(docData)
+                const docDat = docSnapshot.data()
+                console.log(docDat)
             }
         })
 
