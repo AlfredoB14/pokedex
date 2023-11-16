@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore"
 
 
 const firebaseConfig = initializeApp({
-    apiKey: "AIzaSyCMIUAKGDY07Nmst5rLalo-YmCkoA96Dlk",
-    authDomain: "pokedex-441bd.firebaseapp.com",
-    projectId: "pokedex-441bd",
-    storageBucket: "pokedex-441bd.appspot.com",
-    messagingSenderId: "485096425714",
-    appId: "1:485096425714:web:431d8876a433dd0672286b"
-  });
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
+});
 
 //Inicialización de Firebase
 const db = getFirestore()
