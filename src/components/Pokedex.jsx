@@ -2,8 +2,25 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Pokemon } from './Pokemon'
 import db from '../firebase/firebaseConfig'
-import { collection, addDoc } from 'firebase/firestore'
+import { doc, onSnapshot, setDoc, collection, addDoc } from 'firebase/firestore'
+import Button from '@mui/material/Button';
+
+
 export const Pokedex = () => {
+
+    const DBReferece = doc(db, 'team/principal')
+
+    function readDocument(){
+        onSnapshot(DBReferece, docSnapshot => {
+            if(docSnapshot.exists()){
+                const docData = docSnapshot.data()
+                console.log(docData)
+            }
+        })
+
+    }
+
+    readDocument()
 
     const[pokemones, setPokemones] = useState([])
 
@@ -32,6 +49,7 @@ export const Pokedex = () => {
     
   return ( 
     <div>
+        
         {pokemones.map((pokemon) =>
         {
             return <Pokemon key={pokemon.id} pokemon={pokemon}/>

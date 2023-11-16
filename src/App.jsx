@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import pokeLogo from './assets/pokeballgym.png'
 import { Pokedex } from './components/pokedex'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,7 @@ function App() {
       <h1>Pokedex</h1>
       <div className="card">
         <Pokedex></Pokedex>
+
       </div>
 
     </>
