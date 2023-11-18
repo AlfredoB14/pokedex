@@ -25,6 +25,8 @@ export const Pokedex = () => {
     const[pokemones, setPokemones] = useState([])
     const[team, setTeam] = useState([])
     const[page, setPage] = useState(1)
+    const[counter, setCounter] = useState(0)
+
 
     const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
 
@@ -41,6 +43,7 @@ export const Pokedex = () => {
                     return {
                         ...pokemon,
                         image: pokemon.sprites.front_default,
+                        imageShiny: pokemon.sprites.front_shiny,
                         sprites: pokemon.sprites
                     }
                 }) 
@@ -61,24 +64,54 @@ export const Pokedex = () => {
         })
     }, [])
     
+
+    const addPokemon = (pokemon) => {
+
+        if(team.length <= 6){
+            setTeam((prevPokemon) => [...prevPokemon, pokemon])
+            setCounter((prevcontador = 1) => prevcontador + 1)
+        }
+
+        console.log(team)
+    };
+
+
+    const deletePokemon = (pokemon) => {
+        setTeam((prevTeam) => prevTeam.filter((teamMember) => teamMember.id !== pokemon.id));
+    };
+
   return ( 
-    <div >
+    <>
         <div>
-            {
-                page != 1 && <Button variant="contained" onClick={() => setPage(page - 1)} >Anterior</Button> 
-            }
-            
-            <Button variant="contained" onClick={() => setPage(page + 1) }>Siguiente</Button>
-        </div>
+
+            <div className='teamgrid'>
+
+                {team.map((pokemon) =>
+                {
+                    return <Pokemon key={pokemon.name} pokemon={pokemon} onAdd={() => addPokemon(pokemon) } onDelete={() => deletePokemon(pokemon)} selected={true}/>
+                })}
+
+            </div>
+
+            <div>
+                {
+                    page != 1 && <Button variant="contained" onClick={() => setPage(page - 1)} >Anterior</Button> 
+                }
+                
+                <Button variant="contained" onClick={() => setPage(page + 1) }>Siguiente</Button>
+            </div>
 
 
-        <div className="parent">
-            {pokemones.map((pokemon) =>
-            {
-                return <Pokemon key={pokemon.id} pokemon={pokemon}/>
-            })}
-        </div>
+            <div className="parent">
+                {pokemones.map((pokemon) =>
+                {
+                    return <Pokemon key={pokemon.name} pokemon={pokemon} onAdd={() => addPokemon(pokemon)} onDelete={() => deletePokemon(pokemon)} selected={false}/>
+                })}
+            </div>
 
-  </div>
+    </div>
+
+
+  </>
   )
 }
