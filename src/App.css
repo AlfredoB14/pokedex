@@ -41,3 +41,7 @@
   color: #888;
 }
 
+.btnGroup {
+  padding: 2em;
+  position: fixed;
+}
