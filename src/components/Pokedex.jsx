@@ -67,7 +67,7 @@ export const Pokedex = () => {
 
     const addPokemon = (pokemon) => {
 
-        if(team.length <= 6){
+        if(team.length <= 6 && !team.includes(pokemon)){
             setTeam((prevPokemon) => [...prevPokemon, pokemon])
             setCounter((prevcontador = 1) => prevcontador + 1)
         }
