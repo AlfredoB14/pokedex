@@ -5,7 +5,6 @@ import { Pokedex } from './components/Pokedex'
 import ButtonAppBar from './components/Navbar'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
-import { JoinLeft } from '@mui/icons-material'
 
 function App() {
   const [view, setView] = useState(0)
@@ -32,7 +31,7 @@ function App() {
 
       <div className="card">
       
-        {view === 0 ? <Pokedex/> : <h1>Prueba</h1>}
+        <Pokedex view={view}/>
 
       </div>
 

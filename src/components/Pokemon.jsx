@@ -24,7 +24,14 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
 
         <Tooltip title={selected != true ? `Add ${pokemon.name} to the team` : `delete ${pokemon.name} to the team` } disableInteractive>
             {
-             selected != true ? <button onClick={onAdd} > { shiny != 0 ? <img src={pokemon.imageShiny} alt=''/> : <img src={pokemon.image} alt=''/> } </button> : <button onClick={onDelete} > S { shiny != 0 ? <img src={pokemon.imageShiny} alt=''/> : <img src={pokemon.image} alt=''/> } </button>
+             selected != true ? 
+              <button onClick={onAdd} > { shiny != 0 ? <img src={pokemon.imageShiny} alt=''/> 
+              : 
+              <img src={pokemon.image} alt=''/> } </button> 
+
+              : <button onClick={onDelete} > S { shiny != 0 ? <img src={pokemon.imageShiny} alt=''/> 
+              
+              : <img src={pokemon.image} alt=''/> } </button>
             }
 
         </Tooltip>
