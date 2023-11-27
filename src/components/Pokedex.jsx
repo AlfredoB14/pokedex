@@ -6,19 +6,14 @@ import { doc, onSnapshot, setDoc, collection, addDoc, updateDoc } from 'firebase
 import Button from '@mui/material/Button'
 
 
-export const Pokedex = ({view}) => {
+export const Pokedex = () => {
 
     const[pokemones, setPokemones] = useState([])
     const[team, setTeam] = useState([])
     const[page, setPage] = useState(1)
     const[counter, setCounter] = useState(0)
 
-    let url = ``
-    
-    if (view == 1)
-        url = `https://pokeapi.co/api/v2/pokemon?limit=1&offset=${(page - 1) * 1}`
-    else
-        url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
 
     useEffect(() => {
         axios.get(url).then((response) => {
@@ -40,7 +35,7 @@ export const Pokedex = ({view}) => {
                 setPokemones(pokemonData)
             })
         })
-    }, [setPokemones, page, view])
+    }, [setPokemones, page])
 
     useEffect(()=>{
         const unsub = onSnapshot(doc(db, "team", "principal"), (snapshot) => {

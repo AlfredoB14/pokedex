@@ -10,8 +10,29 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
   const[selected2, setSelected2] = useState(false)
 
   return (
-    
-    <Paper elevation={0}>
+    <>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3 className='pokename'>{pokemon.name}</h3>
+              <img className='pokeimg' src={pokemon.image} />
+            </div>
+            
+            <div class="card-back">
+              <p>Weight: {pokemon.weight}</p>
+              <p>Height: {pokemon.height}m</p>
+              <Button variant="contained" onClick={onAdd}>Select</Button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+    {/* <Paper elevation={0}>
       <div>
         <div>
           
@@ -36,6 +57,7 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
 
         </Tooltip>
       </div>
-    </Paper>
+    </Paper> */}
+    </>
   )
 }
