@@ -27,9 +27,10 @@ export const Pokedex = () => {
                     const pokemon = res.data
                     return {
                         ...pokemon,
-                        image: pokemon.sprites.front_default,
+                        image: pokemon.sprites.other["official-artwork"].front_default,
                         imageShiny: pokemon.sprites.front_shiny,
-                        sprites: pokemon.sprites
+                        sprites: pokemon.sprites,
+                        types: pokemon.types
                     }
                 }) 
                 setPokemones(pokemonData)

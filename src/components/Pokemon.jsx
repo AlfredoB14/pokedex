@@ -9,6 +9,8 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
   const[shiny, setShiny] = useState(0)
   const[selected2, setSelected2] = useState(false)
 
+  let tipos = pokemon.types.map((type) => `<p class='${type.type.name} tipo'>${type.type.name}</p>`)
+
   return (
     <>
 
@@ -20,8 +22,19 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
             </div>
             
             <div class="card-back">
-              <p>Weight: {pokemon.weight}</p>
-              <p>Height: {pokemon.height}m</p>
+              <p>Weight: {pokemon.weight}KG</p>
+              <p>Height: {pokemon.height}M</p>
+              <div class='pokemon-tipos'>
+              <p class='${pokemon.types[0].type.name} tipo'>{pokemon.types[0].type.name}</p>
+
+                {/* {
+                  pokemon.types === 1 ?
+                  `<p class='${pokemon.types[0].type.name} tipo'>${pokemon.types[0].type.name}</p>`
+                  :
+                  <p> <p class='${pokemon.types[0].type.name} tipo'>${pokemon.types[0].type.name}</p></p>
+                } */}
+              </div>
+              
               <Button variant="contained" onClick={onAdd}>Select</Button>
             </div>
           </div>

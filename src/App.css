@@ -101,6 +101,9 @@
 .pokeimg {
 
   position: absolute;
+  width: 100px;
+  height: 100px;
+
 }
 
 .pokename {
@@ -111,4 +114,151 @@
 .pp {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.pokemon-tipos {
+  display: flex;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tipo {
+  padding: .25rem .5rem;
+  border-radius: 100vmax;
+}
+
+
+.grass {
+  text-transform: uppercase;
+  background-color: green;
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.normal {
+  text-transform: uppercase;
+  background-color: rgb(193, 193, 193);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.fire {
+  text-transform: uppercase;
+  background-color: rgb(197, 0, 0);
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.water {
+  text-transform: uppercase;
+  background-color: rgb(0, 119, 158);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.poison {
+  text-transform: uppercase;
+  background-color: rgb(108, 2, 108);
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.rock {
+  text-transform: uppercase;
+  background-color: rgb(118, 83, 83);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.ground {
+  text-transform: uppercase;
+  background-color: rgb(110, 93, 61);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.flying {
+  text-transform: uppercase;
+  background-color: rgb(96, 96, 236);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.ghost {
+  text-transform: uppercase;
+  background-color: rgb(65, 39, 65);
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.dark {
+  text-transform: uppercase;
+  background-color: rgb(42, 36, 36);
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.psychic {
+  text-transform: uppercase;
+  background-color: rgb(165, 29, 122);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.electric {
+  text-transform: uppercase;
+  background-color: yellow;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.ice {
+  text-transform: uppercase;
+  background-color: lightblue;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.steel {
+  text-transform: uppercase;
+  background-color: rgb(140, 137, 137);
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.dragon {
+  text-transform: uppercase;
+  background-color: #7038F8;
+  color: white;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.fighting {
+  text-transform: uppercase;
+  background-color: #C03028;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.fairy {
+  text-transform: uppercase;
+  background-color: #F0B6BC;
+  border: 0;
+  border-radius: 100vmax;;
+}
+
+.bug {
+  text-transform: uppercase;
+  background-color: #A8B820;
+  border: 0;
+  border-radius: 100vmax;;
 }
