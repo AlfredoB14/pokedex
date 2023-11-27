@@ -107,8 +107,18 @@
 }
 
 .pokename {
+  
+  position:absolute;
   text-transform: uppercase;
-  letter-spacing: 10px
+  letter-spacing: 10px;
+  top: -20px;
+}
+.pokeid {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 100px;
+  color: rgb(198, 194, 194);
+  
 }
 
 .pp {
@@ -122,143 +132,175 @@
   font-size: .75rem;
   font-weight: 500;
   flex-wrap: wrap;
-  justify-content: center;
-}
+  position: absolute;
+  top: 150px;
 
-.tipo {
-  padding: .25rem .5rem;
-  border-radius: 100vmax;
 }
 
 
 .grass {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: green;
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .normal {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(193, 193, 193);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .fire {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(197, 0, 0);
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .water {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(0, 119, 158);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .poison {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(108, 2, 108);
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .rock {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(118, 83, 83);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .ground {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(110, 93, 61);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .flying {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(96, 96, 236);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .ghost {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(65, 39, 65);
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .dark {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(42, 36, 36);
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .psychic {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(165, 29, 122);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .electric {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: yellow;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .ice {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: lightblue;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .steel {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: rgb(140, 137, 137);
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .dragon {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: #7038F8;
   color: white;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
 }
 
 .fighting {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: #C03028;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .fairy {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: #F0B6BC;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }
 
 .bug {
+  padding: .25rem .5rem;
   text-transform: uppercase;
   background-color: #A8B820;
   border: 0;
-  border-radius: 100vmax;;
+  border-radius: 100vmax;
+  color: white;
 }

@@ -17,23 +17,24 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <h3 className='pokename'>{pokemon.name}</h3>
+            <h3 className='pokename'>{pokemon.name}</h3>
+              <h3 className='pokeid'>#{pokemon.id}</h3>
               <img className='pokeimg' src={pokemon.image} />
+              <div class='pokemon-tipos'>
+              
+              {
+                pokemon.types[1] ?
+                <><p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p> <p class={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</p></>
+                :
+                <p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p>
+              }
+            </div>
             </div>
             
             <div class="card-back">
               <p>Weight: {pokemon.weight}KG</p>
               <p>Height: {pokemon.height}M</p>
-              <div class='pokemon-tipos'>
-              <p class='${pokemon.types[0].type.name} tipo'>{pokemon.types[0].type.name}</p>
-
-                {/* {
-                  pokemon.types === 1 ?
-                  `<p class='${pokemon.types[0].type.name} tipo'>${pokemon.types[0].type.name}</p>`
-                  :
-                  <p> <p class='${pokemon.types[0].type.name} tipo'>${pokemon.types[0].type.name}</p></p>
-                } */}
-              </div>
+ 
               
               <Button variant="contained" onClick={onAdd}>Select</Button>
             </div>
