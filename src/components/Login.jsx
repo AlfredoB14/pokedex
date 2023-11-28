@@ -82,7 +82,7 @@ export const Login = ({onLog}) => {
         <>
             <div className="app">
                 <div className="login-form">
-                    <div className="title">Sign In</div>
+                    <div className="title"><img src='/src/assets/Pokédex_logo.png'></img></div>
                     {isSubmitted ? <div className='title'>User is successfully logged in</div> : renderForm}
                 </div>
             </div>       
