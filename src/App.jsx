@@ -1,23 +1,24 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import pokeLogo from './assets/pokeballgym.png'
 import { Pokedex } from './components/Pokedex'
 import ButtonAppBar from './components/Navbar'
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
 
 function App() {
 
+  const[logValue, setLogValue] = useState(false)
 
+  const doLogin = () => {
+    setLogValue(true)
+  }
 
   return (
     <>
-      <ButtonAppBar/>
- 
-      <div>
-        <Pokedex/>
-      </div>
-      
+
+        <ButtonAppBar></ButtonAppBar>
+        <div>
+          <Pokedex/>
+        </div>  
     </>
   )
 }

@@ -81,33 +81,40 @@ export const Pokedex = () => {
   return ( 
     <>
         <div>
+            <h3 style={{position:'relative', padding:'1.5rem'}}>Your Team: </h3>
 
-            <div className='teamgrid'>
-                
-                {team.map((pokemon) =>
+            {
+                <div className='teamgrid'>
+                    
+                    {team.map((pokemon) =>
+                    {
+                        return <Pokemon key={pokemon.name} pokemon={pokemon} onAdd={() => addPokemon(pokemon) } onDelete={() => deletePokemon(pokemon)} selected={true}/>
+                    })}
+
+                </div>
+            }
+
+
+
+            <h3 style={{position:'relative', padding:'1.5rem'}}>Choose your Pokémon </h3>
+
+            <div>
                 {
-                    return <Pokemon key={pokemon.name} pokemon={pokemon} onAdd={() => addPokemon(pokemon) } onDelete={() => deletePokemon(pokemon)} selected={true}/>
-                })}
-
+                    page != 1 && <Button variant="contained" onClick={() => setPage(page - 1)} >Back</Button> 
+                }
+                
+                <Button variant="contained" onClick={() => setPage(page + 1) }>Next</Button>
             </div>
 
-
-
-
             <div className="parent">
+            
                 {pokemones.map((pokemon) =>
                 {
                     return <Pokemon key={pokemon.name} pokemon={pokemon} onAdd={() => addPokemon(pokemon)} onDelete={() => deletePokemon(pokemon)} selected={false}/>
                 })}
             </div>
 
-            <div>
-                {
-                    page != 1 && <Button variant="contained" onClick={() => setPage(page - 1)} >Anterior</Button> 
-                }
-                
-                <Button variant="contained" onClick={() => setPage(page + 1) }>Siguiente</Button>
-            </div>
+
     </div>
 
 

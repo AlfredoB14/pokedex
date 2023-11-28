@@ -9,26 +9,32 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
   const[shiny, setShiny] = useState(0)
   const[selected2, setSelected2] = useState(false)
 
-  let tipos = pokemon.types.map((type) => `<p class='${type.type.name} tipo'>${type.type.name}</p>`)
+
 
   return (
     <>
-
+    {
+        selected === false ?
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
             <h3 className='pokename'>{pokemon.name}</h3>
-              <h3 className='pokeid'>#{pokemon.id}</h3>
+              {
+                pokemon.id < 10 ?
+                  <h3 className='pokeid'>#00{pokemon.id}</h3>
+                :
+                  <h3 className='pokeid'>#{pokemon.id}</h3>
+              }
               <img className='pokeimg' src={pokemon.image} />
               <div class='pokemon-tipos'>
               
-              {
-                pokemon.types[1] ?
-                <><p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p> <p class={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</p></>
-                :
-                <p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p>
-              }
-            </div>
+                {
+                  pokemon.types[1] ?
+                  <><p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p> <p class={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</p></>
+                  :
+                  <p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p>
+                }
+              </div>
             </div>
             
             <div class="card-back">
@@ -40,6 +46,29 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
             </div>
           </div>
         </div>
+
+        :
+
+        <div class="cardSelected">
+          <div class="card-inner">
+            <div class="card-front">
+            <h3 className='pokenameSelected'>{pokemon.name}</h3>
+              <img width={70} height={70} src={pokemon.image} />
+              <div class='pokemon-tiposSelected'>
+              
+              {
+                pokemon.types[1] ?
+                <><p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p> <p class={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</p></>
+                :
+                <p class={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</p>
+              }
+            </div>
+            </div>
+            <IconButton className='RMVBTN' onClick={onDelete}><img  src='/src/assets/eliminar.png' height={20} width={20}/></IconButton>
+          </div>
+        </div>
+
+      }
 
 
 

@@ -14,21 +14,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.parent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 25px;
-  grid-row-gap: 20px;
-  }
 
-.teamgrid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 25px;
-  grid-row-gap: 20px;
-}
 
 a {
   font-weight: 500;
