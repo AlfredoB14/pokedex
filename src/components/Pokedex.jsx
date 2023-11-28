@@ -94,8 +94,6 @@ export const Pokedex = () => {
                 </div>
             }
 
-
-
             <h3 style={{position:'relative', padding:'1.5rem'}}>Choose your Pokémon </h3>
 
             <div>
