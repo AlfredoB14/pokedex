@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Pokemon } from './Pokemon'
 import db from '../firebase/firebaseConfig'
-import { doc, onSnapshot, setDoc, collection, addDoc, updateDoc } from 'firebase/firestore'
+import { doc, onSnapshot, setDoc, collection, addDoc, updateDoc, getDoc } from 'firebase/firestore'
 import Button from '@mui/material/Button'
 
 
@@ -12,6 +12,7 @@ export const Pokedex = () => {
     const[team, setTeam] = useState([])
     const[page, setPage] = useState(1)
     const[counter, setCounter] = useState(0)
+
 
     let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
 
@@ -38,30 +39,55 @@ export const Pokedex = () => {
         })
     }, [setPokemones, page])
 
-    useEffect(()=>{
-        const unsub = onSnapshot(doc(db, "team", "principal"), (snapshot) => {
-            //console.log(snapshot.data())
-
-            const data = snapshot.data()
-
-            Object.keys(data).forEach((key) => {
-                console.log(`${key}: ${data[key]}`)
-            });
-
-            //ADD DATA TO THE DB
-           
-            setDoc(doc(db, "team", "principal"), {
-                team
-                
-                })
-           
-        })
-    }, [setTeam])
+    useEffect(() => {
+        if (team.length > 0) {
+          const datatosend = team.map((pokemon) => {
+            if (pokemon.image) {
+              return {
+                name: pokemon.name,
+                image: pokemon.image,
+                types: pokemon.types,
+              };
+            } else if (pokemon.sprite) {
+              return {
+                name: pokemon.name,
+                image: pokemon.sprite,
+                types: pokemon.types,
+              };
+            }
+          })
+      
+          setDoc(doc(db, "team", "principal"), { datatosend });
+        } else{
+            setTimeout(() => {
+                setDoc(doc(db, "team", "principal"), { });
+            }, 1000)
+            
+        }
+      }, [team]);
+      
 
     //Get team
-    useEffect(()=>{
-        
-    }, [team])
+    useEffect(() => {
+        getDoc(doc(db, "team", "principal")).then((docSnapshot) => {
+          if (docSnapshot.exists()) {
+            // Extract the data from the document
+            const teamData = docSnapshot.data();
+            console.log("TEAMDATA",teamData)
+            // Assuming 'datatosend' is the field containing the array of pokemons
+            if (teamData.datatosend && Array.isArray(teamData.datatosend)) {
+              setTeam(teamData.datatosend);
+              console.log("SetTeam success")
+            } else {
+              console.log("Team data is not in the expected format");
+              setTeam([]);
+            }
+          } else {
+            console.log("Document doesn't exist or error occurred");
+            setTeam([]); // Set the team to an empty array if the document doesn't exist
+          }
+        });
+    }, []);
 
     const addPokemon = (pokemon) => {
 
@@ -75,7 +101,7 @@ export const Pokedex = () => {
 
 
     const deletePokemon = (pokemon) => {
-        setTeam((prevTeam) => prevTeam.filter((teamMember) => teamMember.id !== pokemon.id));
+        setTeam(team.filter((pokemonInTeam) => pokemonInTeam !== pokemon));
     };
 
   return ( 
