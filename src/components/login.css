@@ -1,12 +1,10 @@
 .app {
-    font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
     height: 100vh;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 
   }
   
@@ -40,6 +38,7 @@
     background-color: white;
     padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
   }
   
   .list-container {
