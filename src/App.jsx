@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import pokeLogo from './assets/pokeballgym.png'
+import pokeLogo from '/assets/pokeballgym.png'
 import { Pokedex } from './components/Pokedex'
 import ButtonAppBar from './components/Navbar'
 import { Login } from './components/Login'

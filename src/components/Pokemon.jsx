@@ -64,7 +64,7 @@ export const Pokemon = ({pokemon, onAdd, onDelete, selected}) => {
               }
             </div>
             </div>
-            <IconButton className='RMVBTN' onClick={onDelete}><img  src='./src/assets/eliminar.png' height={20} width={20}/></IconButton>
+            <IconButton className='RMVBTN' onClick={onDelete}><img  src='/assets/eliminar.png' height={20} width={20}/></IconButton>
           </div>
         </div>
 
