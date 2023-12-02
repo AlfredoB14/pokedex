@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
             href='https://pokeapi.co/'
             
           >
-            <img src='/src/assets/pokeballgym.png' height={30} width={30} ></img>
+            <img src='/assets/pokeballgym.png' height={30} width={30} ></img>
           </IconButton>
           <Typography variant="h6" component="div" position="fixed" left={70} sx={{ flexGrow: 2 }}>
             Pokedex
